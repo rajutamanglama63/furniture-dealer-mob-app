@@ -1,13 +1,33 @@
 import React from "react";
 import { Box, Text } from "@/utils/theme";
 import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
+import styles from "./home.style";
+import { Fontisto, Ionicons } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
+import Welcome from "@/components/home/welcome";
 
 const HomeScreen = () => {
   return (
     <SafeAreaWrapper>
-      <Box>
-        <Text>HomeScreen</Text>
+      <Box mt="3" style={styles.appWrapper}>
+        <Box style={styles.appBar}>
+          <Ionicons name="location-outline" size={30} />
+          <Text variant="textXl" color="gray650" style={styles.location}>
+            Kathmandu, Nepal
+          </Text>
+          <Box style={{ alignItems: "flex-end" }}>
+            <Box style={styles.cartCount}>
+              <Text style={styles.cartNum} variant="textXs">
+                4
+              </Text>
+            </Box>
+            <TouchableOpacity>
+              <Fontisto name="shopping-bag" size={24} />
+            </TouchableOpacity>
+          </Box>
+        </Box>
       </Box>
+      <Welcome />
     </SafeAreaWrapper>
   );
 };

@@ -1,13 +1,21 @@
+import { Box, Text } from "@/utils/theme";
 import React from "react";
-import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
-import theme, { Box } from "@/utils/theme";
+import theme from "@/utils/theme";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import Input from "@/components/shared/input";
+import Input from "../shared/input";
 
-const SearchScreen = () => {
+const Welcome = () => {
   return (
-    <SafeAreaWrapper>
+    <Box>
+      <Box style={styles.container}>
+        <Text variant="text3Xl" color="gray9" style={styles.welcomeTxt}>
+          Find The Most
+        </Text>
+        <Text variant="text3Xl" color="green900" style={styles.welcomeTxt}>
+          Luxurious Furniture
+        </Text>
+      </Box>
       <Box
         flexDirection="row"
         justifyContent="center"
@@ -24,13 +32,21 @@ const SearchScreen = () => {
           <Input placeholder="what are you looking for" />
         </Box>
       </Box>
-    </SafeAreaWrapper>
+    </Box>
   );
 };
 
-export default SearchScreen;
+export default Welcome;
 
 const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+  },
+  welcomeTxt: {
+    marginHorizontal: theme.spacing["5.5"],
+    fontWeight: "900",
+    marginTop: theme.spacing["3"],
+  },
   searchIcon: {
     marginHorizontal: 10,
     color: theme.colors.gray4,
