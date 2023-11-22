@@ -6,6 +6,7 @@ const theme = createTheme({
   colors: colors,
   spacing: {
     "1": 4,
+    "1.5": 5,
     "2": 8,
     "3": 12,
     "3.5": 14,

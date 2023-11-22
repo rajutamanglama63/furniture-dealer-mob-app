@@ -3,8 +3,9 @@ import { Box, Text } from "@/utils/theme";
 import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
 import styles from "./home.style";
 import { Fontisto, Ionicons } from "@expo/vector-icons";
-import { TouchableOpacity } from "react-native";
+import { ScrollView, TouchableOpacity } from "react-native";
 import Welcome from "@/components/home/welcome";
+import Carousel from "@/components/home/carousel";
 
 const HomeScreen = () => {
   return (
@@ -27,7 +28,10 @@ const HomeScreen = () => {
           </Box>
         </Box>
       </Box>
-      <Welcome />
+      <ScrollView>
+        <Welcome />
+        <Carousel />
+      </ScrollView>
     </SafeAreaWrapper>
   );
 };
