@@ -77,10 +77,19 @@ const HomeScreen = () => {
       <ScrollView>
         <HomeScreenHeader />
         <Carousel />
-        <Box mx="5.5" my="3">
+        <Box
+          mx="5.5"
+          my="4"
+          flexDirection="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <Text variant="textLg" color="gray9" fontWeight="bold">
             New Rivals
           </Text>
+          <TouchableOpacity>
+            <Ionicons name="ios-grid" size={24} color={theme.colors.green900} />
+          </TouchableOpacity>
         </Box>
         <Box mx="5.5">
           <FlatList
