@@ -1,6 +1,6 @@
 import { Pressable } from "react-native";
 import React from "react";
-import { Box, Theme } from "@/utils/theme";
+import { Box, Text, Theme } from "@/utils/theme";
 import { useNavigation } from "@react-navigation/native";
 import { useTheme } from "@shopify/restyle";
 import { Ionicons } from "@expo/vector-icons";
@@ -14,8 +14,19 @@ const NavigateBack = () => {
   };
   return (
     <Pressable onPress={navigateBack}>
-      <Box bg="gray100" p="2" borderRadius="rounded-7xl">
-        <Ionicons name="chevron-back" size={24} color={theme.colors.gray9} />
+      <Box flexDirection="row" alignItems="center" mx="5.5">
+        <Box
+          bg="gray900"
+          p="2"
+          borderRadius="rounded-7xl"
+          height={35}
+          width={35}
+        >
+          <Ionicons name="chevron-back" size={17} color={theme.colors.white} />
+        </Box>
+        <Text variant="text2Xl" fontWeight="900" mx="5.5" letterSpacing={2}>
+          All Products
+        </Text>
       </Box>
     </Pressable>
   );

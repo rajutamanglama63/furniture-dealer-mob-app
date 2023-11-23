@@ -7,8 +7,11 @@ import { FlatList, ScrollView, TouchableOpacity } from "react-native";
 import Carousel from "@/components/home/carousel";
 import HomeScreenHeader from "@/components/home/home-screen-header";
 import Slider from "@/components/home/slider";
+import { useNavigation } from "@react-navigation/native";
+import { ProductsNavigationType } from "@/navigations/types";
 
 const HomeScreen = () => {
+  const navigation = useNavigation<ProductsNavigationType>();
   const products = [
     {
       id: 1,
@@ -54,6 +57,10 @@ const HomeScreen = () => {
       </Box>
     );
   };
+
+  const navigateToProducts = () => {
+    navigation.navigate("Products");
+  };
   return (
     <SafeAreaWrapper>
       <Box mt="3" style={styles.appWrapper}>
@@ -87,7 +94,7 @@ const HomeScreen = () => {
           <Text variant="textLg" color="gray9" fontWeight="bold">
             New Rivals
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPressIn={navigateToProducts}>
             <Ionicons name="ios-grid" size={24} color={theme.colors.green900} />
           </TouchableOpacity>
         </Box>

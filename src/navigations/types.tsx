@@ -1,4 +1,5 @@
 import { NavigatorScreenParams } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 export type AppStackParamList = {
   Root: NavigatorScreenParams<RootBottomTabParamList>;
@@ -24,7 +25,7 @@ export type RootBottomTabParamList = {
 export type HomeStackParamList = {
   Home: undefined;
   Cart: undefined;
-  AllProducts: undefined;
+  Products: NavigatorScreenParams<ProductStackParamList>;
 };
 
 export type SearchStackParamList = {
@@ -37,8 +38,18 @@ export type ProfileStackParamList = {
   Order: undefined;
 };
 
+export type ProductStackParamList = {
+  Products: undefined;
+  Product: {
+    id?: string;
+  };
+};
+
 declare global {
   namespace ReactNavigation {
     interface RootParamList extends RootStackParamList {}
   }
 }
+
+export type ProductsNavigationType =
+  NativeStackNavigationProp<ProductStackParamList>;

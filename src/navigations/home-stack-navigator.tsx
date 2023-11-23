@@ -21,7 +21,7 @@ const HomeStackNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="AllProducts"
+        name="Products"
         component={Products}
         options={{ headerShown: false }}
       />
