@@ -5,7 +5,7 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import Input from "../shared/input";
 
-const Welcome = () => {
+const HomeScreenHeader = () => {
   return (
     <Box>
       <Box style={styles.container}>
@@ -36,7 +36,7 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default HomeScreenHeader;
 
 const styles = StyleSheet.create({
   container: {

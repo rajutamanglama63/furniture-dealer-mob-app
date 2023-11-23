@@ -1,13 +1,59 @@
 import React from "react";
-import { Box, Text } from "@/utils/theme";
+import theme, { Box, Text } from "@/utils/theme";
 import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
 import styles from "./home.style";
 import { Fontisto, Ionicons } from "@expo/vector-icons";
-import { ScrollView, TouchableOpacity } from "react-native";
-import Welcome from "@/components/home/welcome";
+import { FlatList, ScrollView, TouchableOpacity } from "react-native";
 import Carousel from "@/components/home/carousel";
+import HomeScreenHeader from "@/components/home/home-screen-header";
+import Slider from "@/components/home/slider";
 
 const HomeScreen = () => {
+  const products = [
+    {
+      id: 1,
+      name: "One pice sofa",
+      pic: "https://plus.unsplash.com/premium_photo-1678559033839-aaf50cb4c843?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZnVybml0dXJlfGVufDB8fDB8fHww",
+      price: "$ 123.45",
+      desc: "loream ipsum gen",
+    },
+    {
+      id: 2,
+      name: "Sofa set",
+      pic: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVybml0dXJlfGVufDB8fDB8fHww",
+      price: "$ 153.45",
+      desc: "loream ipsum gen",
+    },
+    {
+      id: 3,
+      name: "Family sofa",
+      pic: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D",
+      price: "$ 125.43",
+      desc: "loream ipsum gen",
+    },
+    {
+      id: 4,
+      name: "Meeting Table",
+      pic: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D",
+      price: "$ 298.45",
+      desc: "loream ipsum gen",
+    },
+    {
+      id: 5,
+      name: "Dining Table",
+      pic: "https://plus.unsplash.com/premium_photo-1676823570926-238f23020786?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D",
+      price: "$ 153.75",
+      desc: "loream ipsum gen",
+    },
+  ];
+
+  const itemsToRender = ({ item }: any) => {
+    return (
+      <Box key={item.id}>
+        <Slider item={item} />
+      </Box>
+    );
+  };
   return (
     <SafeAreaWrapper>
       <Box mt="3" style={styles.appWrapper}>
@@ -29,8 +75,21 @@ const HomeScreen = () => {
         </Box>
       </Box>
       <ScrollView>
-        <Welcome />
+        <HomeScreenHeader />
         <Carousel />
+        <Box mx="5.5" my="3">
+          <Text variant="textLg" color="gray9" fontWeight="bold">
+            New Rivals
+          </Text>
+        </Box>
+        <Box mx="5.5">
+          <FlatList
+            data={products}
+            renderItem={itemsToRender}
+            horizontal
+            contentContainerStyle={{ columnGap: theme.spacing["3"] }}
+          />
+        </Box>
       </ScrollView>
     </SafeAreaWrapper>
   );
