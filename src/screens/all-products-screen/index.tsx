@@ -89,7 +89,7 @@ const Products = () => {
             numColumns={2}
             renderItem={itemsToRender}
             contentContainerStyle={{
-              columnGap: theme.spacing["3"],
+              columnGap: theme.spacing["5"],
             }}
           />
         </Box>

@@ -1,5 +1,7 @@
+import { ProductsNavigationType } from "@/navigations/types";
 import theme, { Box, Text } from "@/utils/theme";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
   Dimensions,
@@ -14,9 +16,17 @@ type itemType = {
 };
 
 const ProductsGrid = ({ item }: itemType) => {
-  const screenWidth = Dimensions.get("window").width;
+  // const screenWidth = Dimensions.get("window").width;
+  const navigation = useNavigation<ProductsNavigationType>();
+
+  const navigateToProductDetail = (id: number) => {
+    navigation.navigate("Product", {});
+  };
   return (
-    <Pressable style={styles.rivalItem}>
+    <Pressable
+      style={styles.rivalItem}
+      onPress={() => navigateToProductDetail(item.id)}
+    >
       <Box alignItems="center">
         <Image
           source={{
@@ -24,9 +34,8 @@ const ProductsGrid = ({ item }: itemType) => {
           }}
           style={{
             height: 100,
-            width: screenWidth - 250,
+            width: "100%",
             borderRadius: theme.borderRadii["rounded-3xl"],
-            marginTop: theme.spacing[1],
           }}
         />
       </Box>
@@ -67,10 +76,10 @@ const styles = StyleSheet.create({
     height: 180,
     width: 150,
     backgroundColor: theme.colors.blu100,
-    paddingHorizontal: theme.spacing[3],
+    padding: theme.spacing[2],
     flexDirection: "column",
     borderRadius: theme.borderRadii["rounded-3xl"],
-    marginHorizontal: theme.spacing[3],
+    marginHorizontal: theme.spacing[4],
     marginBottom: theme.spacing[3],
   },
 });

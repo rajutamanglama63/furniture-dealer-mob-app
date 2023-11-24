@@ -4,6 +4,7 @@ import HomeScreen from "@/screens/home-screen";
 import { HomeStackParamList } from "./types";
 import CartScreen from "@/screens/cart-screen";
 import Products from "@/screens/all-products-screen";
+import ProductDetailScreen from "@/screens/product-detail-screen";
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
 
