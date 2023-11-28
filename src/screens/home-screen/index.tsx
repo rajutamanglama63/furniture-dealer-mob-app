@@ -1,17 +1,16 @@
-import React from "react";
-import theme, { Box, Text } from "@/utils/theme";
-import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
-import styles from "./home.style";
-import { Fontisto, Ionicons } from "@expo/vector-icons";
-import { FlatList, ScrollView, TouchableOpacity } from "react-native";
 import Carousel from "@/components/home/carousel";
 import HomeScreenHeader from "@/components/home/home-screen-header";
 import Slider from "@/components/home/slider";
+import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
+import theme, { Box, Text } from "@/utils/theme";
+import { Fontisto, Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { ProductsNavigationType } from "@/navigations/types";
+import React from "react";
+import { FlatList, ScrollView, TouchableOpacity } from "react-native";
+import styles from "./home.style";
 
 const HomeScreen = () => {
-  const navigation = useNavigation<ProductsNavigationType>();
+  const navigation = useNavigation<any>();
   const products = [
     {
       id: 1,
@@ -59,7 +58,7 @@ const HomeScreen = () => {
   };
 
   const navigateToProducts = () => {
-    navigation.navigate("Products");
+    navigation.navigate("ProductStack");
   };
   return (
     <SafeAreaWrapper>

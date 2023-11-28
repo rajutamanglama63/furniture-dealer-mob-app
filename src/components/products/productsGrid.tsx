@@ -19,14 +19,11 @@ const ProductsGrid = ({ item }: itemType) => {
   // const screenWidth = Dimensions.get("window").width;
   const navigation = useNavigation<ProductsNavigationType>();
 
-  const navigateToProductDetail = (id: number) => {
-    navigation.navigate("Product", {});
+  const navigateToProductDetail = () => {
+    navigation.navigate("ProductDetail", { id: item.id });
   };
   return (
-    <Pressable
-      style={styles.rivalItem}
-      onPress={() => navigateToProductDetail(item.id)}
-    >
+    <Pressable style={styles.rivalItem} onPress={navigateToProductDetail}>
       <Box alignItems="center">
         <Image
           source={{

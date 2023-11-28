@@ -5,7 +5,7 @@ import theme, { Box } from "@/utils/theme";
 import React from "react";
 import { FlatList } from "react-native";
 
-const Products = () => {
+const ProductsScreen = () => {
   const AllProducts = [
     {
       id: 1,
@@ -82,7 +82,7 @@ const Products = () => {
   return (
     <SafeAreaWrapper>
       <Box mt="3" mb="12">
-        <NavigateBack />
+        <NavigateBack screenTitle={"All Products"} />
         <Box m="5">
           <FlatList
             data={AllProducts}
@@ -98,4 +98,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsScreen;

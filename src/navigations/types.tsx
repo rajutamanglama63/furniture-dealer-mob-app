@@ -25,7 +25,7 @@ export type RootBottomTabParamList = {
 export type HomeStackParamList = {
   Home: undefined;
   Cart: undefined;
-  Products: NavigatorScreenParams<ProductStackParamList>;
+  ProductStack: NativeStackNavigationProp<ProductStackParamList>;
 };
 
 export type SearchStackParamList = {
@@ -40,8 +40,8 @@ export type ProfileStackParamList = {
 
 export type ProductStackParamList = {
   Products: undefined;
-  Product: {
-    id?: string;
+  ProductDetail: {
+    id?: number;
   };
 };
 

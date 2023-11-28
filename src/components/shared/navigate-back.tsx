@@ -5,7 +5,11 @@ import { useNavigation } from "@react-navigation/native";
 import { useTheme } from "@shopify/restyle";
 import { Ionicons } from "@expo/vector-icons";
 
-const NavigateBack = () => {
+type screenTitleProp = {
+  screenTitle: string;
+};
+
+const NavigateBack = ({ screenTitle }: screenTitleProp) => {
   const navigation = useNavigation();
   const theme = useTheme<Theme>();
 
@@ -25,7 +29,7 @@ const NavigateBack = () => {
           <Ionicons name="chevron-back" size={17} color={theme.colors.white} />
         </Box>
         <Text variant="text2Xl" fontWeight="900" mx="5.5" letterSpacing={2}>
-          All Products
+          {screenTitle}
         </Text>
       </Box>
     </Pressable>

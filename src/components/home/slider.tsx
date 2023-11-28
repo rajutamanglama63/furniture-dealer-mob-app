@@ -15,7 +15,7 @@ type itemType = {
 };
 
 const Slider = ({ item }: itemType) => {
-  const screenWidth = Dimensions.get("window").width;
+  // const screenWidth = Dimensions.get("window").width;
   return (
     // <Box marginLeft="5.5">
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
@@ -27,9 +27,10 @@ const Slider = ({ item }: itemType) => {
             }}
             style={{
               height: 100,
-              width: screenWidth - 250,
+              // width: screenWidth - 250,
+              width: "100%",
               borderRadius: theme.borderRadii["rounded-3xl"],
-              marginTop: theme.spacing[1],
+              // marginTop: theme.spacing[1],
             }}
           />
         </Box>
@@ -76,9 +77,9 @@ const styles = StyleSheet.create({
     height: 180,
     width: 150,
     backgroundColor: theme.colors.blu100,
-    paddingHorizontal: theme.spacing[3],
+    padding: theme.spacing[2],
     flexDirection: "column",
     borderRadius: theme.borderRadii["rounded-3xl"],
-    borderColor: "green900",
+    // borderColor: "green900",
   },
 });

@@ -1,10 +1,9 @@
-import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "@/screens/home-screen";
-import { HomeStackParamList } from "./types";
 import CartScreen from "@/screens/cart-screen";
-import Products from "@/screens/all-products-screen";
-import ProductDetailScreen from "@/screens/product-detail-screen";
+import HomeScreen from "@/screens/home-screen";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
+import ProductStackNavigator from "./product-stack-navigator";
+import { HomeStackParamList } from "./types";
 
 const Stack = createNativeStackNavigator<HomeStackParamList>();
 
@@ -22,8 +21,8 @@ const HomeStackNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Products"
-        component={Products}
+        name="ProductStack"
+        component={ProductStackNavigator}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

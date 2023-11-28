@@ -1,9 +1,8 @@
-import { View, Text } from "react-native";
-import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { ProductStackParamList } from "./types";
-import Products from "@/screens/all-products-screen";
+import ProductsScreen from "@/screens/all-products-screen";
 import ProductDetailScreen from "@/screens/product-detail-screen";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
+import { ProductStackParamList } from "./types";
 
 const Stack = createNativeStackNavigator<ProductStackParamList>();
 
@@ -12,11 +11,11 @@ const ProductStackNavigator = () => {
     <Stack.Navigator>
       <Stack.Screen
         name="Products"
-        component={Products}
+        component={ProductsScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Product"
+        name="ProductDetail"
         component={ProductDetailScreen}
         options={{ headerShown: false }}
       />
