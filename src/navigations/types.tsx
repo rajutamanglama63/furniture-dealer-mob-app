@@ -26,11 +26,16 @@ export type HomeStackParamList = {
   Home: undefined;
   Cart: undefined;
   ProductStack: NativeStackNavigationProp<ProductStackParamList>;
+  ProductView: {
+    id?: number;
+  };
 };
 
 export type SearchStackParamList = {
   Search: undefined;
-  ProductDetail: undefined;
+  ProductDetail: {
+    id?: number;
+  };
 };
 
 export type ProfileStackParamList = {

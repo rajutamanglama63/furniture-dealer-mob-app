@@ -9,6 +9,12 @@ import {
 import React from "react";
 import theme, { Box, Text } from "@/utils/theme";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import {
+  HomeStackParamList,
+  ProductStackParamList,
+  ProductsNavigationType,
+} from "@/navigations/types";
 
 type itemType = {
   item: { id: number; name: string; pic: string; price: string; desc: string };
@@ -16,10 +22,15 @@ type itemType = {
 
 const Slider = ({ item }: itemType) => {
   // const screenWidth = Dimensions.get("window").width;
+  const navigation = useNavigation<any>();
+
+  const navigateToProductDetail = () => {
+    navigation.navigate("ProductView", { id: item.id });
+  };
   return (
     // <Box marginLeft="5.5">
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-      <Pressable style={styles.rivalItem}>
+      <Pressable style={styles.rivalItem} onPress={navigateToProductDetail}>
         <Box alignItems="center">
           <Image
             source={{
