@@ -6,7 +6,7 @@ import { useTheme } from "@shopify/restyle";
 import { Ionicons } from "@expo/vector-icons";
 
 type screenTitleProp = {
-  screenTitle: string;
+  screenTitle?: string;
 };
 
 const NavigateBack = ({ screenTitle }: screenTitleProp) => {

@@ -1,20 +1,14 @@
+import theme, { Box, Text } from "@/utils/theme";
+import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
 import {
-  Dimensions,
   Image,
   Pressable,
   ScrollView,
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
-import theme, { Box, Text } from "@/utils/theme";
-import { Ionicons } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
-import {
-  HomeStackParamList,
-  ProductStackParamList,
-  ProductsNavigationType,
-} from "@/navigations/types";
 
 type itemType = {
   item: { id: number; name: string; pic: string; price: string; desc: string };
