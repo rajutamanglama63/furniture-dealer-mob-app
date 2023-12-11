@@ -4,6 +4,7 @@ import theme, { Box } from "@/utils/theme";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import Input from "@/components/shared/input";
+import Card from "@/components/shared/card";
 
 const SearchScreen = () => {
   return (
@@ -24,6 +25,7 @@ const SearchScreen = () => {
           <Input placeholder="what are you looking for" />
         </Box>
       </Box>
+      <Card />
     </SafeAreaWrapper>
   );
 };
