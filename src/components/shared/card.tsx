@@ -3,27 +3,43 @@ import React from "react";
 import theme, { Box, Text } from "@/utils/theme";
 import { Ionicons } from "@expo/vector-icons";
 
-const Card = () => {
+type cartItemsType = {
+  id: number;
+  itemName: string;
+  store: string;
+  pic: string;
+  price: number;
+  desc: string;
+  count: number;
+};
+
+const Card = ({ item }: { item: cartItemsType }) => {
   return (
     <Box style={styles.container}>
       <Box style={styles.picHolder}>
-        <Image
-          source={{
-            uri: "https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-          }}
-          style={styles.pic}
-        />
+        {item.pic ? (
+          <Image source={{ uri: item.pic }} style={styles.pic} />
+        ) : (
+          <Image
+            source={{
+              uri: "https://images.pexels.com/photos/439227/pexels-photo-439227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            }}
+            style={styles.pic}
+          />
+        )}
       </Box>
       <Box style={styles.rightPart}>
         <Box style={styles.about}>
           <Text variant="textSm" fontWeight="500" color="green900">
-            Cuboard
+            {item.itemName ? item.itemName : "Cupboard"}
           </Text>
           <Text variant="textXs" color="gray9">
-            Dream Furniture
+            {item.store ? item.store : "Dream Furniture"}
           </Text>
           <Text variant="textXs" color="gray9">
-            $499.23 * 2
+            {item.price && item.count
+              ? `${item.price} * ${item.count}`
+              : "$123.23 * 12"}
           </Text>
         </Box>
 

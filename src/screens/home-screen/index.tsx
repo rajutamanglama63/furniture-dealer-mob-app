@@ -60,6 +60,10 @@ const HomeScreen = () => {
   const navigateToProducts = () => {
     navigation.navigate("ProductStack");
   };
+
+  const navigateToCart = () => {
+    navigation.navigate("Cart");
+  };
   return (
     <SafeAreaWrapper>
       <Box mt="3" style={styles.appWrapper}>
@@ -74,7 +78,7 @@ const HomeScreen = () => {
                 4
               </Text>
             </Box>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={navigateToCart}>
               <Fontisto name="shopping-bag" size={24} />
             </TouchableOpacity>
           </Box>
