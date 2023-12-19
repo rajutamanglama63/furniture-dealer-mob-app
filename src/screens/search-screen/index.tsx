@@ -1,15 +1,10 @@
-import React from "react";
+import Card from "@/components/shared/card";
+import Input from "@/components/shared/input";
 import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
 import theme, { Box } from "@/utils/theme";
-import {
-  FlatList,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
 import { Feather } from "@expo/vector-icons";
-import Input from "@/components/shared/input";
-import Card from "@/components/shared/card";
+import React from "react";
+import { FlatList, StyleSheet, TouchableOpacity } from "react-native";
 
 type cardDataType = {
   id: number;
@@ -70,6 +65,10 @@ const SearchScreen = () => {
       </Box>
 
       <FlatList
+        style={{
+          marginBottom: theme.spacing[5],
+          marginTop: theme.spacing[5],
+        }}
         data={foundItems}
         renderItem={itemsToRender}
         contentContainerStyle={{ rowGap: theme.spacing[3] }}

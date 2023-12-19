@@ -8,8 +8,10 @@ import {
   Ionicons,
   MaterialIcons,
 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const ProfileScreen = () => {
+  const navigation = useNavigation<any>();
   const navList = [
     {
       id: 1,
@@ -33,6 +35,10 @@ const ProfileScreen = () => {
       name: "Logout",
     },
   ];
+
+  const navigationRoute = (name: any) => {
+    navigation.navigate(name);
+  };
   return (
     <>
       <Box style={styles.top}>
@@ -67,6 +73,7 @@ const ProfileScreen = () => {
               <Pressable
                 key={navItem.id}
                 style={{ flexDirection: "row", padding: theme.spacing[3] }}
+                onPress={() => navigationRoute(navItem.name)}
               >
                 {navItem.icon}
 

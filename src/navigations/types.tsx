@@ -42,6 +42,7 @@ export type ProfileStackParamList = {
   Profile: undefined;
   Order: undefined;
   Favourite: undefined;
+  Cart: undefined;
 };
 
 export type ProductStackParamList = {
