@@ -41,6 +41,7 @@ export type SearchStackParamList = {
 export type ProfileStackParamList = {
   Profile: undefined;
   Order: undefined;
+  Favourite: undefined;
 };
 
 export type ProductStackParamList = {

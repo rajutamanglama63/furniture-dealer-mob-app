@@ -18,6 +18,7 @@ const theme = createTheme({
     "11": 44,
     "12": 48,
     "13": 56,
+    "14": 65,
   },
   borderRadii: {
     none: 0,
@@ -28,6 +29,10 @@ const theme = createTheme({
     "rounded-4xl": 16,
     "rounded-5xl": 20,
     "rounded-7xl": 28,
+    "rounded-8xl": 35,
+    "rounded-9xl": 42,
+    "rounded-10xl": 48,
+    "rounded-11xl": 55,
   },
   textVariants,
 });

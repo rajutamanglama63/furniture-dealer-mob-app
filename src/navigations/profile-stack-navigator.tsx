@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ProfileStackParamList } from "./types";
 import ProfileScreen from "@/screens/profile-screen";
 import OrderScreen from "@/screens/order-screen";
+import FavouriteScreen from "@/screens/favourite-screen";
 
 const Stack = createNativeStackNavigator<ProfileStackParamList>();
 
@@ -17,6 +18,11 @@ const ProfileStackNavigator = () => {
       <Stack.Screen
         name="Order"
         component={OrderScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Favourite"
+        component={FavouriteScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
