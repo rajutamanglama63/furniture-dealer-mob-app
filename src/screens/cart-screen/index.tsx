@@ -1,11 +1,11 @@
-import React from "react";
-import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
-import theme, { Box } from "@/utils/theme";
-import NavigateBack from "@/components/shared/navigate-back";
-import { FlatList, ScrollView } from "react-native";
-import Card from "@/components/shared/card";
-import styles from "./cart.style";
 import Button from "@/components/shared/button";
+import Card from "@/components/shared/card";
+import NavigateBack from "@/components/shared/navigate-back";
+import SafeAreaWrapper from "@/components/shared/safe-area-wrapper";
+import theme, { Box, Text } from "@/utils/theme";
+import React from "react";
+import { FlatList } from "react-native";
+import styles from "./cart.style";
 
 type cartItemsType = {
   id: number;
@@ -48,15 +48,7 @@ const CartScreen = () => {
   };
   return (
     <SafeAreaWrapper>
-      <Box
-        mt="3"
-        mb="12"
-        position="relative"
-        flex={1}
-        // style={{
-        //   backgroundColor: theme.colors.zinc550,
-        // }}
-      >
+      <Box mt="3" position="relative" flex={1}>
         <NavigateBack screenTitle="Cart" />
 
         <FlatList
@@ -69,6 +61,20 @@ const CartScreen = () => {
           contentContainerStyle={{ rowGap: theme.spacing[3] }}
         />
         <Box style={styles.calculation}>
+          <Text variant="textLg" fontWeight="800" pt="5">
+            Order info
+          </Text>
+          <Box mt="5.5" mb="5.5">
+            <Box flexDirection="row" justifyContent="space-between">
+              <Text>Subtotal</Text>
+              <Text>$ 983.43</Text>
+            </Box>
+
+            <Box flexDirection="row" justifyContent="space-between">
+              <Text>Total</Text>
+              <Text fontWeight="bold">$ 983.43</Text>
+            </Box>
+          </Box>
           <Button
             label={`checkout $234`}
             uppercase
