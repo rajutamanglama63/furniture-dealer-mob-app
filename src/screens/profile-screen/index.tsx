@@ -1,9 +1,38 @@
-import { Box, Text } from "@/utils/theme";
+import theme, { Box, Text } from "@/utils/theme";
 import React from "react";
 import styles from "./profile.style";
-import { Image } from "react-native";
+import { FlatList, Image, Pressable, Touchable } from "react-native";
+import {
+  AntDesign,
+  Feather,
+  Ionicons,
+  MaterialIcons,
+} from "@expo/vector-icons";
 
 const ProfileScreen = () => {
+  const navList = [
+    {
+      id: 1,
+      icon: <Ionicons name="heart-outline" size={24} color="black" />,
+      name: "Favourite",
+    },
+    { id: 2, icon: <Feather name="truck" size={24} />, name: "Order" },
+    {
+      id: 3,
+      icon: <Feather name="shopping-bag" size={24} color="black" />,
+      name: "Cart",
+    },
+    {
+      id: 4,
+      icon: <AntDesign name="deleteuser" size={24} color="black" />,
+      name: "Delete Account",
+    },
+    {
+      id: 5,
+      icon: <AntDesign name="logout" size={24} color="black" />,
+      name: "Logout",
+    },
+  ];
   return (
     <>
       <Box style={styles.top}>
@@ -26,11 +55,29 @@ const ProfileScreen = () => {
         <Text variant="textXl" textAlign="center" fontWeight="bold">
           John Doe
         </Text>
-        {/* <Box style={styles.email}> */}
         <Text style={styles.email} color="gray550">
           doe1234kforppfl@example.com
         </Text>
-        {/* </Box> */}
+      </Box>
+
+      <Box style={styles.navList}>
+        {navList.map((navItem) => {
+          return (
+            <>
+              <Pressable
+                key={navItem.id}
+                style={{ flexDirection: "row", padding: theme.spacing[3] }}
+              >
+                {navItem.icon}
+
+                <Text ml="5" color="gray550">
+                  {navItem.name}
+                </Text>
+              </Pressable>
+              <Box borderBottomWidth={1} borderBottomColor="gray550"></Box>
+            </>
+          );
+        })}
       </Box>
     </>
   );

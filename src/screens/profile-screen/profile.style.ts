@@ -39,6 +39,11 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginBottom: theme.spacing[5],
   },
+  navList: {
+    flexDirection: "column",
+    columnGap: theme.spacing[3],
+    marginHorizontal: theme.spacing[3],
+  },
 });
 
 export default styles;
