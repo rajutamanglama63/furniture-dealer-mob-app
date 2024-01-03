@@ -25,7 +25,12 @@ const WelcomeScreen = () => {
         <Text textAlign="center" variant="text3Xl" fontWeight="700">
           Welcome!
         </Text>
-        <Text textAlign="center" variant="textSm" fontWeight="300">
+        <Text
+          textAlign="center"
+          variant="textSm"
+          fontWeight="400"
+          color="gray550"
+        >
           Join with us for geniune furniture product
         </Text>
         <Box my="3.5" mx="10">

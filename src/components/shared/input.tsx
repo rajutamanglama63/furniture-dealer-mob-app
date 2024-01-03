@@ -8,7 +8,7 @@ type InputProps = {
 
 const Input = ({ label, error, ...props }: InputProps) => {
   return (
-    <Box flexDirection="row">
+    <Box flexDirection="column">
       {label ? (
         <>
           <Text variant="textXs">{label}</Text>
