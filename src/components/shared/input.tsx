@@ -1,20 +1,32 @@
 import theme, { Box, Text } from "@/utils/theme";
+import { EvilIcons } from "@expo/vector-icons";
+
 import { StyleSheet, TextInput, TextInputProps } from "react-native";
 
 type InputProps = {
   label?: string;
   error?: undefined;
+  labelAlignment?: "auto" | "center" | "left" | "right" | "justify" | undefined;
 } & TextInputProps;
 
-const Input = ({ label, error, ...props }: InputProps) => {
+const Input = ({ label, error, labelAlignment, ...props }: InputProps) => {
   return (
-    <Box flexDirection="column">
+    <Box flexDirection="column" flex={1}>
       {label ? (
         <>
-          <Text variant="textXs">{label}</Text>
+          <Text
+            variant="textXs"
+            mb="1.5"
+            textAlign={labelAlignment}
+            fontWeight="400"
+          >
+            {label}
+          </Text>
         </>
       ) : null}
-      <TextInput style={styles.inputField} {...props} />
+      <Box flexDirection="row">
+        <TextInput style={styles.inputField} {...props} />
+      </Box>
     </Box>
   );
 };
@@ -27,5 +39,6 @@ const styles = StyleSheet.create({
     width: "100%",
     backgroundColor: theme.colors.blu100,
     borderRadius: theme.borderRadii["rounded-4xl"],
+    color: theme.colors.gray4,
   },
 });

@@ -19,6 +19,14 @@ const styles = StyleSheet.create({
   bottom: {
     paddingHorizontal: theme.spacing[3.5],
   },
+  icon: {
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: theme.borderRadii["rounded-4xl"],
+    backgroundColor: theme.colors.blu100,
+    marginHorizontal: 6,
+    color: theme.colors.gray4,
+  },
 });
 
 export default styles;
