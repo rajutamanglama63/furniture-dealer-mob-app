@@ -12,8 +12,8 @@ const WelcomeScreen = () => {
   const imagePath =
     "/home/fm-pc-lt-177/reactNative/furniture-dealer/furniture-mob-app/assets/Welcome-bro.png";
 
-  const navigateToSignupScreen = () => {
-    navigation.navigate("SignUp");
+  const navigateToSignInScreen = () => {
+    navigation.navigate("SignIn");
   };
 
   return (
@@ -37,7 +37,7 @@ const WelcomeScreen = () => {
           <Button
             label="Get started"
             uppercase
-            onPress={navigateToSignupScreen}
+            onPress={navigateToSignInScreen}
             bgcolor={theme.colors.green900}
           />
         </Box>

@@ -73,11 +73,11 @@ const SignUpScreen = () => {
             ))}
           </Box>
 
-          <Button label="signup" uppercase bgcolor={theme.colors.green900} />
+          <Button label="sign up" uppercase bgcolor={theme.colors.green900} />
           <Text my="4" textAlign="center">
             or
           </Text>
-          <Button label="google" uppercase bgcolor={theme.colors.orange500} />
+          <Button label="google" uppercase bgcolor={theme.colors.blu400} />
         </Box>
       </Box>
     </>
